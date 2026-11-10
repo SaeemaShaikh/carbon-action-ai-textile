@@ -1,0 +1,978 @@
+{
+ "built": "2026-11-03T12:06:46",
+ "code_key": "21565f09c23ade70",
+ "months_per_plant": 5,
+ "scenarios": {
+  "baseline": {
+   "months": 10,
+   "faults": 195,
+   "detected": 193,
+   "root_cause_correct": 189,
+   "threshold_detected": 128,
+   "detected_pct": {
+    "mean": 98.95,
+    "min": 94.74,
+    "max": 100.0
+   },
+   "root_cause_pct": {
+    "mean": 97.94,
+    "min": 94.44,
+    "max": 100.0
+   },
+   "threshold_detected_pct": {
+    "mean": 65.56,
+    "min": 55.0,
+    "max": 80.0
+   },
+   "delay_min": {
+    "mean": 20.88,
+    "min": 0.0,
+    "max": 37.5
+   },
+   "threshold_delay_min": {
+    "mean": 90.25,
+    "min": 5.0,
+    "max": 430.0
+   },
+   "false_alarms_per_machine_day": {
+    "mean": 0.03,
+    "min": 0.0,
+    "max": 0.13
+   },
+   "threshold_false_alarms_per_machine_day": {
+    "mean": 0.21,
+    "min": 0.0,
+    "max": 0.77
+   },
+   "missed": {
+    "boiler_fouling": 2
+   }
+  },
+  "noisy_meters": {
+   "months": 10,
+   "faults": 195,
+   "detected": 195,
+   "root_cause_correct": 190,
+   "threshold_detected": 131,
+   "detected_pct": {
+    "mean": 100.0,
+    "min": 100.0,
+    "max": 100.0
+   },
+   "root_cause_pct": {
+    "mean": 97.42,
+    "min": 94.44,
+    "max": 100.0
+   },
+   "threshold_detected_pct": {
+    "mean": 67.14,
+    "min": 55.0,
+    "max": 80.0
+   },
+   "delay_min": {
+    "mean": 21.38,
+    "min": 0.0,
+    "max": 40.0
+   },
+   "threshold_delay_min": {
+    "mean": 79.38,
+    "min": 7.5,
+    "max": 430.0
+   },
+   "false_alarms_per_machine_day": {
+    "mean": 0.08,
+    "min": 0.0,
+    "max": 0.3
+   },
+   "threshold_false_alarms_per_machine_day": {
+    "mean": 0.32,
+    "min": 0.03,
+    "max": 1.03
+   },
+   "missed": {}
+  },
+  "weak_faults": {
+   "months": 10,
+   "faults": 192,
+   "detected": 159,
+   "root_cause_correct": 158,
+   "threshold_detected": 96,
+   "detected_pct": {
+    "mean": 83.12,
+    "min": 61.9,
+    "max": 94.12
+   },
+   "root_cause_pct": {
+    "mean": 99.38,
+    "min": 93.75,
+    "max": 100.0
+   },
+   "threshold_detected_pct": {
+    "mean": 50.09,
+    "min": 38.89,
+    "max": 63.16
+   },
+   "delay_min": {
+    "mean": 46.75,
+    "min": 5.0,
+    "max": 260.0
+   },
+   "threshold_delay_min": {
+    "mean": 125.12,
+    "min": 15.0,
+    "max": 365.0
+   },
+   "false_alarms_per_machine_day": {
+    "mean": 0.06,
+    "min": 0.0,
+    "max": 0.33
+   },
+   "threshold_false_alarms_per_machine_day": {
+    "mean": 0.21,
+    "min": 0.0,
+    "max": 0.73
+   },
+   "missed": {
+    "boiler_fouling": 13,
+    "boiler_economizer": 19,
+    "boiler_steam_leak": 1
+   }
+  }
+ },
+ "overlapping": {
+  "episodes": 180,
+  "detected": 180,
+  "top_cause_is_one_of_them": 174,
+  "both_in_top_two": 163
+ },
+ "instruments": {
+  "cases": [
+   {
+    "kind": "sensor_o2_drift",
+    "label": "Flue O2 sensor drifting",
+    "detected": true,
+    "delay_min": 15,
+    "process_alert_first": false,
+    "factory": "surat-01"
+   },
+   {
+    "kind": "sensor_fuel_meter",
+    "label": "Fuel meter over-reading",
+    "detected": true,
+    "delay_min": 30,
+    "process_alert_first": true,
+    "factory": "surat-01"
+   },
+   {
+    "kind": "sensor_steam_frozen",
+    "label": "Steam meter frozen",
+    "detected": true,
+    "delay_min": 55,
+    "process_alert_first": false,
+    "factory": "surat-01"
+   },
+   {
+    "kind": "sensor_chamber_dead",
+    "label": "Chamber temperature signal lost",
+    "detected": true,
+    "delay_min": 10,
+    "process_alert_first": false,
+    "factory": "surat-01"
+   },
+   {
+    "kind": "sensor_airflow_frozen",
+    "label": "Airflow sensor frozen",
+    "detected": true,
+    "delay_min": 55,
+    "process_alert_first": false,
+    "factory": "surat-01"
+   },
+   {
+    "kind": "sensor_o2_drift",
+    "label": "Flue O2 sensor drifting",
+    "detected": true,
+    "delay_min": 25,
+    "process_alert_first": false,
+    "factory": "ahmd-02"
+   },
+   {
+    "kind": "sensor_fuel_meter",
+    "label": "Fuel meter over-reading",
+    "detected": true,
+    "delay_min": 15,
+    "process_alert_first": true,
+    "factory": "ahmd-02"
+   },
+   {
+    "kind": "sensor_steam_frozen",
+    "label": "Steam meter frozen",
+    "detected": true,
+    "delay_min": 50,
+    "process_alert_first": false,
+    "factory": "ahmd-02"
+   },
+   {
+    "kind": "sensor_chamber_dead",
+    "label": "Chamber temperature signal lost",
+    "detected": true,
+    "delay_min": 10,
+    "process_alert_first": false,
+    "factory": "ahmd-02"
+   },
+   {
+    "kind": "sensor_airflow_frozen",
+    "label": "Airflow sensor frozen",
+    "detected": true,
+    "delay_min": 55,
+    "process_alert_first": false,
+    "factory": "ahmd-02"
+   }
+  ],
+  "detected": 10,
+  "total": 10,
+  "process_alert_first": 2,
+  "false_alarms_per_machine_day": {
+   "mean": 0.03,
+   "min": 0.0,
+   "max": 0.07
+  }
+ },
+ "verification": {
+  "measured": {
+   "cases": 72,
+   "median_error_pct": 7.4,
+   "mean_bias_pct": -2.4,
+   "within_20pct": 68,
+   "within_50pct": 72
+  },
+  "predicted": {
+   "cases": 72,
+   "median_error_pct": 14.2,
+   "mean_bias_pct": -1.6,
+   "within_20pct": 47,
+   "within_50pct": 68
+  },
+  "cases": [
+   {
+    "factory": "surat-01",
+    "machine": "BLR-01",
+    "fault": "boiler_excess_air",
+    "action": "tune_o2",
+    "severity": 0.7,
+    "true_kg_h": 52.6,
+    "measured_kg_h": 46.5,
+    "predicted_kg_h": 45.4
+   },
+   {
+    "factory": "surat-01",
+    "machine": "BLR-01",
+    "fault": "boiler_excess_air",
+    "action": "tune_o2",
+    "severity": 1.0,
+    "true_kg_h": 85.2,
+    "measured_kg_h": 73.5,
+    "predicted_kg_h": 74.4
+   },
+   {
+    "factory": "surat-01",
+    "machine": "BLR-01",
+    "fault": "boiler_fouling",
+    "action": "soot_blow",
+    "severity": 0.7,
+    "true_kg_h": 58.6,
+    "measured_kg_h": 58.7,
+    "predicted_kg_h": 54.1
+   },
+   {
+    "factory": "surat-01",
+    "machine": "BLR-01",
+    "fault": "boiler_fouling",
+    "action": "soot_blow",
+    "severity": 1.0,
+    "true_kg_h": 78.3,
+    "measured_kg_h": 66.7,
+    "predicted_kg_h": 59.5
+   },
+   {
+    "factory": "surat-01",
+    "machine": "BLR-01",
+    "fault": "boiler_steam_leak",
+    "action": "repair_leaks",
+    "severity": 0.7,
+    "true_kg_h": 82.8,
+    "measured_kg_h": 81.5,
+    "predicted_kg_h": 72.7
+   },
+   {
+    "factory": "surat-01",
+    "machine": "BLR-01",
+    "fault": "boiler_steam_leak",
+    "action": "repair_leaks",
+    "severity": 1.0,
+    "true_kg_h": 118.6,
+    "measured_kg_h": 104.9,
+    "predicted_kg_h": 100.7
+   },
+   {
+    "factory": "surat-01",
+    "machine": "BLR-01",
+    "fault": "boiler_economizer",
+    "action": "restore_condensate",
+    "severity": 0.7,
+    "true_kg_h": 27.3,
+    "measured_kg_h": 25.4,
+    "predicted_kg_h": 26.4
+   },
+   {
+    "factory": "surat-01",
+    "machine": "BLR-01",
+    "fault": "boiler_economizer",
+    "action": "restore_condensate",
+    "severity": 1.0,
+    "true_kg_h": 38.0,
+    "measured_kg_h": 37.2,
+    "predicted_kg_h": 43.3
+   },
+   {
+    "factory": "surat-01",
+    "machine": "STN-01",
+    "fault": "stenter_damper_open",
+    "action": "humidity_control",
+    "severity": 0.7,
+    "true_kg_h": 18.7,
+    "measured_kg_h": 18.8,
+    "predicted_kg_h": 19.2
+   },
+   {
+    "factory": "surat-01",
+    "machine": "STN-01",
+    "fault": "stenter_damper_open",
+    "action": "humidity_control",
+    "severity": 1.0,
+    "true_kg_h": 25.1,
+    "measured_kg_h": 25.1,
+    "predicted_kg_h": 27.3
+   },
+   {
+    "factory": "surat-01",
+    "machine": "STN-01",
+    "fault": "stenter_filter_clog",
+    "action": "clean_filters",
+    "severity": 0.7,
+    "true_kg_h": 30.8,
+    "measured_kg_h": 33.5,
+    "predicted_kg_h": 27.5
+   },
+   {
+    "factory": "surat-01",
+    "machine": "STN-01",
+    "fault": "stenter_filter_clog",
+    "action": "clean_filters",
+    "severity": 1.0,
+    "true_kg_h": 36.7,
+    "measured_kg_h": 36.6,
+    "predicted_kg_h": 39.1
+   },
+   {
+    "factory": "surat-01",
+    "machine": "STN-01",
+    "fault": "stenter_overdrying",
+    "action": "reduce_temperature",
+    "severity": 0.7,
+    "true_kg_h": 9.5,
+    "measured_kg_h": 9.6,
+    "predicted_kg_h": 5.0
+   },
+   {
+    "factory": "surat-01",
+    "machine": "STN-01",
+    "fault": "stenter_overdrying",
+    "action": "reduce_temperature",
+    "severity": 1.0,
+    "true_kg_h": 12.4,
+    "measured_kg_h": 11.6,
+    "predicted_kg_h": 6.8
+   },
+   {
+    "factory": "surat-01",
+    "machine": "STN-01",
+    "fault": "stenter_idle_burners",
+    "action": "idle_shutoff",
+    "severity": 0.7,
+    "true_kg_h": 5.0,
+    "measured_kg_h": 5.6,
+    "predicted_kg_h": 6.6
+   },
+   {
+    "factory": "surat-01",
+    "machine": "STN-01",
+    "fault": "stenter_idle_burners",
+    "action": "idle_shutoff",
+    "severity": 1.0,
+    "true_kg_h": 5.6,
+    "measured_kg_h": 5.8,
+    "predicted_kg_h": 7.1
+   },
+   {
+    "factory": "surat-01",
+    "machine": "STN-01",
+    "fault": "stenter_low_padder",
+    "action": "raise_padder",
+    "severity": 0.7,
+    "true_kg_h": 23.3,
+    "measured_kg_h": 26.1,
+    "predicted_kg_h": 20.7
+   },
+   {
+    "factory": "surat-01",
+    "machine": "STN-01",
+    "fault": "stenter_low_padder",
+    "action": "raise_padder",
+    "severity": 1.0,
+    "true_kg_h": 29.7,
+    "measured_kg_h": 32.2,
+    "predicted_kg_h": 27.0
+   },
+   {
+    "factory": "surat-01",
+    "machine": "BLR-01",
+    "fault": "boiler_excess_air",
+    "action": "tune_o2",
+    "severity": 0.7,
+    "true_kg_h": 52.8,
+    "measured_kg_h": 60.5,
+    "predicted_kg_h": 43.3
+   },
+   {
+    "factory": "surat-01",
+    "machine": "BLR-01",
+    "fault": "boiler_excess_air",
+    "action": "tune_o2",
+    "severity": 1.0,
+    "true_kg_h": 84.0,
+    "measured_kg_h": 94.3,
+    "predicted_kg_h": 82.0
+   },
+   {
+    "factory": "surat-01",
+    "machine": "BLR-01",
+    "fault": "boiler_fouling",
+    "action": "soot_blow",
+    "severity": 0.7,
+    "true_kg_h": 59.4,
+    "measured_kg_h": 60.7,
+    "predicted_kg_h": 61.9
+   },
+   {
+    "factory": "surat-01",
+    "machine": "BLR-01",
+    "fault": "boiler_fouling",
+    "action": "soot_blow",
+    "severity": 1.0,
+    "true_kg_h": 79.0,
+    "measured_kg_h": 67.6,
+    "predicted_kg_h": 67.3
+   },
+   {
+    "factory": "surat-01",
+    "machine": "BLR-01",
+    "fault": "boiler_steam_leak",
+    "action": "repair_leaks",
+    "severity": 0.7,
+    "true_kg_h": 82.4,
+    "measured_kg_h": 76.4,
+    "predicted_kg_h": 81.6
+   },
+   {
+    "factory": "surat-01",
+    "machine": "BLR-01",
+    "fault": "boiler_steam_leak",
+    "action": "repair_leaks",
+    "severity": 1.0,
+    "true_kg_h": 118.1,
+    "measured_kg_h": 101.5,
+    "predicted_kg_h": 112.7
+   },
+   {
+    "factory": "surat-01",
+    "machine": "BLR-01",
+    "fault": "boiler_economizer",
+    "action": "restore_condensate",
+    "severity": 0.7,
+    "true_kg_h": 28.4,
+    "measured_kg_h": 27.5,
+    "predicted_kg_h": 28.3
+   },
+   {
+    "factory": "surat-01",
+    "machine": "BLR-01",
+    "fault": "boiler_economizer",
+    "action": "restore_condensate",
+    "severity": 1.0,
+    "true_kg_h": 39.1,
+    "measured_kg_h": 39.1,
+    "predicted_kg_h": 45.4
+   },
+   {
+    "factory": "surat-01",
+    "machine": "STN-01",
+    "fault": "stenter_damper_open",
+    "action": "humidity_control",
+    "severity": 0.7,
+    "true_kg_h": 15.1,
+    "measured_kg_h": 14.4,
+    "predicted_kg_h": 16.9
+   },
+   {
+    "factory": "surat-01",
+    "machine": "STN-01",
+    "fault": "stenter_damper_open",
+    "action": "humidity_control",
+    "severity": 1.0,
+    "true_kg_h": 20.2,
+    "measured_kg_h": 21.0,
+    "predicted_kg_h": 26.5
+   },
+   {
+    "factory": "surat-01",
+    "machine": "STN-01",
+    "fault": "stenter_filter_clog",
+    "action": "clean_filters",
+    "severity": 0.7,
+    "true_kg_h": 24.0,
+    "measured_kg_h": 27.4,
+    "predicted_kg_h": 41.3
+   },
+   {
+    "factory": "surat-01",
+    "machine": "STN-01",
+    "fault": "stenter_filter_clog",
+    "action": "clean_filters",
+    "severity": 1.0,
+    "true_kg_h": 30.9,
+    "measured_kg_h": 32.6,
+    "predicted_kg_h": 45.5
+   },
+   {
+    "factory": "surat-01",
+    "machine": "STN-01",
+    "fault": "stenter_overdrying",
+    "action": "reduce_temperature",
+    "severity": 0.7,
+    "true_kg_h": 8.3,
+    "measured_kg_h": 6.8,
+    "predicted_kg_h": 4.7
+   },
+   {
+    "factory": "surat-01",
+    "machine": "STN-01",
+    "fault": "stenter_overdrying",
+    "action": "reduce_temperature",
+    "severity": 1.0,
+    "true_kg_h": 11.0,
+    "measured_kg_h": 9.9,
+    "predicted_kg_h": 8.5
+   },
+   {
+    "factory": "surat-01",
+    "machine": "STN-01",
+    "fault": "stenter_idle_burners",
+    "action": "idle_shutoff",
+    "severity": 0.7,
+    "true_kg_h": 6.7,
+    "measured_kg_h": 8.0,
+    "predicted_kg_h": 6.4
+   },
+   {
+    "factory": "surat-01",
+    "machine": "STN-01",
+    "fault": "stenter_idle_burners",
+    "action": "idle_shutoff",
+    "severity": 1.0,
+    "true_kg_h": 7.5,
+    "measured_kg_h": 8.3,
+    "predicted_kg_h": 7.0
+   },
+   {
+    "factory": "surat-01",
+    "machine": "STN-01",
+    "fault": "stenter_low_padder",
+    "action": "raise_padder",
+    "severity": 0.7,
+    "true_kg_h": 20.9,
+    "measured_kg_h": 19.6,
+    "predicted_kg_h": 21.5
+   },
+   {
+    "factory": "surat-01",
+    "machine": "STN-01",
+    "fault": "stenter_low_padder",
+    "action": "raise_padder",
+    "severity": 1.0,
+    "true_kg_h": 26.9,
+    "measured_kg_h": 25.4,
+    "predicted_kg_h": 28.4
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "BLR-01",
+    "fault": "boiler_excess_air",
+    "action": "tune_o2",
+    "severity": 0.7,
+    "true_kg_h": 16.8,
+    "measured_kg_h": 17.3,
+    "predicted_kg_h": 12.1
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "BLR-01",
+    "fault": "boiler_excess_air",
+    "action": "tune_o2",
+    "severity": 1.0,
+    "true_kg_h": 26.0,
+    "measured_kg_h": 23.9,
+    "predicted_kg_h": 21.5
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "BLR-01",
+    "fault": "boiler_fouling",
+    "action": "soot_blow",
+    "severity": 0.7,
+    "true_kg_h": 18.8,
+    "measured_kg_h": 19.4,
+    "predicted_kg_h": 18.3
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "BLR-01",
+    "fault": "boiler_fouling",
+    "action": "soot_blow",
+    "severity": 1.0,
+    "true_kg_h": 24.8,
+    "measured_kg_h": 22.2,
+    "predicted_kg_h": 20.6
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "BLR-01",
+    "fault": "boiler_steam_leak",
+    "action": "repair_leaks",
+    "severity": 0.7,
+    "true_kg_h": 43.4,
+    "measured_kg_h": 41.3,
+    "predicted_kg_h": 42.9
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "BLR-01",
+    "fault": "boiler_steam_leak",
+    "action": "repair_leaks",
+    "severity": 1.0,
+    "true_kg_h": 62.3,
+    "measured_kg_h": 56.8,
+    "predicted_kg_h": 56.8
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "BLR-01",
+    "fault": "boiler_economizer",
+    "action": "restore_condensate",
+    "severity": 0.7,
+    "true_kg_h": 11.6,
+    "measured_kg_h": 9.2,
+    "predicted_kg_h": 9.8
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "BLR-01",
+    "fault": "boiler_economizer",
+    "action": "restore_condensate",
+    "severity": 1.0,
+    "true_kg_h": 16.0,
+    "measured_kg_h": 16.1,
+    "predicted_kg_h": 19.0
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "STN-01",
+    "fault": "stenter_damper_open",
+    "action": "humidity_control",
+    "severity": 0.7,
+    "true_kg_h": 13.7,
+    "measured_kg_h": 13.1,
+    "predicted_kg_h": 16.4
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "STN-01",
+    "fault": "stenter_damper_open",
+    "action": "humidity_control",
+    "severity": 1.0,
+    "true_kg_h": 18.3,
+    "measured_kg_h": 17.6,
+    "predicted_kg_h": 22.6
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "STN-01",
+    "fault": "stenter_filter_clog",
+    "action": "clean_filters",
+    "severity": 0.7,
+    "true_kg_h": 18.6,
+    "measured_kg_h": 20.0,
+    "predicted_kg_h": 26.4
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "STN-01",
+    "fault": "stenter_filter_clog",
+    "action": "clean_filters",
+    "severity": 1.0,
+    "true_kg_h": 24.1,
+    "measured_kg_h": 26.1,
+    "predicted_kg_h": 35.2
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "STN-01",
+    "fault": "stenter_overdrying",
+    "action": "reduce_temperature",
+    "severity": 0.7,
+    "true_kg_h": 7.0,
+    "measured_kg_h": 6.2,
+    "predicted_kg_h": 4.4
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "STN-01",
+    "fault": "stenter_overdrying",
+    "action": "reduce_temperature",
+    "severity": 1.0,
+    "true_kg_h": 9.3,
+    "measured_kg_h": 7.5,
+    "predicted_kg_h": 5.5
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "STN-01",
+    "fault": "stenter_idle_burners",
+    "action": "idle_shutoff",
+    "severity": 0.7,
+    "true_kg_h": 6.0,
+    "measured_kg_h": 6.1,
+    "predicted_kg_h": 5.6
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "STN-01",
+    "fault": "stenter_idle_burners",
+    "action": "idle_shutoff",
+    "severity": 1.0,
+    "true_kg_h": 6.8,
+    "measured_kg_h": 7.1,
+    "predicted_kg_h": 6.5
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "STN-01",
+    "fault": "stenter_low_padder",
+    "action": "raise_padder",
+    "severity": 0.7,
+    "true_kg_h": 16.6,
+    "measured_kg_h": 16.3,
+    "predicted_kg_h": 15.6
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "STN-01",
+    "fault": "stenter_low_padder",
+    "action": "raise_padder",
+    "severity": 1.0,
+    "true_kg_h": 21.3,
+    "measured_kg_h": 22.1,
+    "predicted_kg_h": 23.1
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "BLR-01",
+    "fault": "boiler_excess_air",
+    "action": "tune_o2",
+    "severity": 0.7,
+    "true_kg_h": 18.3,
+    "measured_kg_h": 14.6,
+    "predicted_kg_h": 14.0
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "BLR-01",
+    "fault": "boiler_excess_air",
+    "action": "tune_o2",
+    "severity": 1.0,
+    "true_kg_h": 28.5,
+    "measured_kg_h": 20.2,
+    "predicted_kg_h": 19.0
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "BLR-01",
+    "fault": "boiler_fouling",
+    "action": "soot_blow",
+    "severity": 0.7,
+    "true_kg_h": 18.8,
+    "measured_kg_h": 18.7,
+    "predicted_kg_h": 18.9
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "BLR-01",
+    "fault": "boiler_fouling",
+    "action": "soot_blow",
+    "severity": 1.0,
+    "true_kg_h": 24.9,
+    "measured_kg_h": 20.9,
+    "predicted_kg_h": 20.7
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "BLR-01",
+    "fault": "boiler_steam_leak",
+    "action": "repair_leaks",
+    "severity": 0.7,
+    "true_kg_h": 43.6,
+    "measured_kg_h": 40.7,
+    "predicted_kg_h": 41.9
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "BLR-01",
+    "fault": "boiler_steam_leak",
+    "action": "repair_leaks",
+    "severity": 1.0,
+    "true_kg_h": 62.5,
+    "measured_kg_h": 54.5,
+    "predicted_kg_h": 56.1
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "BLR-01",
+    "fault": "boiler_economizer",
+    "action": "restore_condensate",
+    "severity": 0.7,
+    "true_kg_h": 11.6,
+    "measured_kg_h": 8.6,
+    "predicted_kg_h": 10.8
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "BLR-01",
+    "fault": "boiler_economizer",
+    "action": "restore_condensate",
+    "severity": 1.0,
+    "true_kg_h": 16.0,
+    "measured_kg_h": 15.3,
+    "predicted_kg_h": 19.5
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "STN-01",
+    "fault": "stenter_damper_open",
+    "action": "humidity_control",
+    "severity": 0.7,
+    "true_kg_h": 20.3,
+    "measured_kg_h": 20.4,
+    "predicted_kg_h": 19.5
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "STN-01",
+    "fault": "stenter_damper_open",
+    "action": "humidity_control",
+    "severity": 1.0,
+    "true_kg_h": 27.2,
+    "measured_kg_h": 26.9,
+    "predicted_kg_h": 26.3
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "STN-01",
+    "fault": "stenter_filter_clog",
+    "action": "clean_filters",
+    "severity": 0.7,
+    "true_kg_h": 23.2,
+    "measured_kg_h": 23.5,
+    "predicted_kg_h": 20.3
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "STN-01",
+    "fault": "stenter_filter_clog",
+    "action": "clean_filters",
+    "severity": 1.0,
+    "true_kg_h": 25.5,
+    "measured_kg_h": 27.8,
+    "predicted_kg_h": 29.2
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "STN-01",
+    "fault": "stenter_overdrying",
+    "action": "reduce_temperature",
+    "severity": 0.7,
+    "true_kg_h": 8.8,
+    "measured_kg_h": 7.6,
+    "predicted_kg_h": 4.0
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "STN-01",
+    "fault": "stenter_overdrying",
+    "action": "reduce_temperature",
+    "severity": 1.0,
+    "true_kg_h": 11.7,
+    "measured_kg_h": 10.3,
+    "predicted_kg_h": 6.1
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "STN-01",
+    "fault": "stenter_idle_burners",
+    "action": "idle_shutoff",
+    "severity": 0.7,
+    "true_kg_h": 3.0,
+    "measured_kg_h": 3.4,
+    "predicted_kg_h": 5.7
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "STN-01",
+    "fault": "stenter_idle_burners",
+    "action": "idle_shutoff",
+    "severity": 1.0,
+    "true_kg_h": 3.4,
+    "measured_kg_h": 3.9,
+    "predicted_kg_h": 6.7
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "STN-01",
+    "fault": "stenter_low_padder",
+    "action": "raise_padder",
+    "severity": 0.7,
+    "true_kg_h": 20.3,
+    "measured_kg_h": 22.4,
+    "predicted_kg_h": 15.1
+   },
+   {
+    "factory": "ahmd-02",
+    "machine": "STN-01",
+    "fault": "stenter_low_padder",
+    "action": "raise_padder",
+    "severity": 1.0,
+    "true_kg_h": 26.0,
+    "measured_kg_h": 26.7,
+    "predicted_kg_h": 19.9
+   }
+  ]
+ }
+}

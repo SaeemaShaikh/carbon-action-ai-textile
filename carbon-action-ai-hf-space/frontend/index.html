@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carbon-Action AI</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M6 26C6 12 16 5 28 4c-1 12-8 22-22 22z' fill='%2322a06b'/></svg>">
+<link rel="stylesheet" href="/static/styles.css">
+<script src="/static/vendor/chart.umd.min.js"></script>
+</head>
+<body>
+
+<!-- ============ LOGIN ============ -->
+<section id="login-view" class="login hidden">
+  <div class="login-art">
+    <div class="brand big">
+      <svg class="leaf" viewBox="0 0 32 32"><path d="M6 26C6 12 16 5 28 4c-1 12-8 22-22 22z"/><path d="M6 26 18 14" class="vein"/></svg>
+      <div><div class="brand-name">CARBON-ACTION AI</div><div class="brand-tag">Smarter Decisions. Lower Emissions.</div></div>
+    </div>
+    <h1>From emission alerts<br>to emission control.</h1>
+    <p>Continuous monitoring, AI root-cause diagnosis, action simulation and verified learning for textile process plants.</p>
+    <ul class="login-points">
+      <li>Detects abnormal fuel use before limits are crossed</li>
+      <li>Explains the cause and simulates the fix</li>
+      <li>Verifies every action and learns from the result</li>
+    </ul>
+  </div>
+  <form id="login-form" class="login-card" autocomplete="on">
+    <h2>Sign in</h2>
+    <p class="muted">Use your plant account</p>
+    <label>Username<input id="lg-user" name="username" value="manager" autocomplete="username"></label>
+    <label>Password<input id="lg-pass" name="password" type="password" value="carbon@123" autocomplete="current-password"></label>
+    <div id="lg-err" class="err"></div>
+    <button class="btn primary wide" type="submit">Sign in</button>
+    <p class="muted small">Demo accounts: <b>manager</b> / carbon@123 (2 factories) · <b>surat</b> / surat@123 (1 factory)</p>
+  </form>
+</section>
+
+<!-- ============ APP ============ -->
+<section id="app-view" class="app hidden">
+  <aside class="sidebar">
+    <div class="brand">
+      <svg class="leaf" viewBox="0 0 32 32"><path d="M6 26C6 12 16 5 28 4c-1 12-8 22-22 22z"/><path d="M6 26 18 14" class="vein"/></svg>
+      <div><div class="brand-name">CARBON-ACTION AI</div><div class="brand-tag">Smarter Decisions. Lower Emissions.</div></div>
+    </div>
+    <nav id="nav">
+      <a data-page="overview" class="active"><i>⌂</i>Plant Overview</a>
+      <a data-page="live"><i>◉</i>Live Data</a>
+      <a data-page="diagnosis"><i>◎</i>AI Diagnosis<span id="nav-badge" class="badge hidden">0</span></a>
+      <a data-page="simulator"><i>⚗</i>Action Simulator</a>
+      <a data-page="forecast"><i>↗</i>No-Action Forecast</a>
+      <a data-page="history"><i>⟲</i>Action History</a>
+      <a data-page="boiler"><i>♨</i>Boiler Intelligence</a>
+      <a data-page="stenter"><i>≋</i>Stenter Intelligence</a>
+      <a data-page="data"><i>▤</i>Data &amp; Evidence</a>
+    </nav>
+    <div class="side-factory">
+      <div class="sf-icon">🏭</div>
+      <div><div id="sf-name" class="sf-name"></div><div id="sf-loc" class="sf-loc"></div>
+      <span class="live-pill"><span class="dot"></span>Live Data</span></div>
+    </div>
+    <div class="side-foot">
+      <svg class="leaf sm" viewBox="0 0 32 32"><path d="M6 26C6 12 16 5 28 4c-1 12-8 22-22 22z"/></svg>
+      <p>Turning industrial data into a cleaner, more efficient tomorrow.</p>
+    </div>
+    <button id="demo-btn" class="demo-btn hidden" title="Demo controls (Shift+D)">⚙ Demo</button>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <h1 id="page-title">Plant Overview</h1>
+        <p id="page-sub" class="muted">Real-time insights into energy use, emissions and production</p>
+      </div>
+      <div class="top-right">
+        <select id="factory-select" class="select" title="Switch factory"></select>
+        <span class="source-tag" id="source-tag" title="Where these readings come from">Simulated data</span>
+        <div class="clock" id="clock">—</div>
+        <div class="live"><span class="dot"></span><span id="live-txt">Live</span></div>
+        <button id="sound-btn" class="icon-btn" title="Alert sound on/off">🔔</button>
+        <div class="avatar" id="avatar" title="Account">AT</div>
+        <div id="user-menu" class="menu hidden">
+          <div id="um-name" class="um-name"></div>
+          <button id="logout-btn" class="btn ghost wide">Sign out</button>
+        </div>
+      </div>
+    </header>
+    <div id="page" class="page"></div>
+    <footer class="foot">
+      <span>CARBON-ACTION AI</span><span>Textile Industry Prototype</span><span>Synthetic plant data · demo emission factors</span>
+      <span class="grow"></span><span id="llm-status"></span>
+    </footer>
+  </main>
+</section>
+
+<!-- alert pop-up stack -->
+<div id="toasts" class="toasts"></div>
+
+<!-- assistant -->
+<button id="chat-fab" class="chat-fab hidden" title="Ask Carbon AI">✦ Ask Carbon AI</button>
+<div id="chat" class="chat hidden">
+  <div class="chat-head"><b>Ask Carbon AI</b><span id="chat-src" class="muted small"></span><button id="chat-x" class="icon-btn">✕</button></div>
+  <div id="chat-log" class="chat-log">
+    <div class="msg bot">Hi! Ask me about today's emissions, why an alert fired, or what to do next.</div>
+  </div>
+  <div class="chips">
+    <button data-q="What should we do first right now?">What to do first?</button>
+    <button data-q="Why did the latest alert fire?">Why the alert?</button>
+    <button data-q="When will we cross our emission cap if we do nothing?">When do we cross the cap?</button>
+  </div>
+  <form id="chat-form" class="chat-form"><input id="chat-in" placeholder="Type a question…" autocomplete="off"><button class="btn primary">Send</button></form>
+</div>
+
+<!-- demo panel -->
+<div id="demo" class="demo hidden">
+  <div class="chat-head"><b>Demo controls</b><span class="muted small">for recording · Shift+D</span><button id="demo-x" class="icon-btn">✕</button></div>
+  <p class="muted small">Not needed for normal use: the plant develops faults on its own and the AI finds them. Use this only to trigger a fault on demand for a presentation, or to fast-forward time.</p>
+  <div id="demo-faults" class="demo-faults"></div>
+  <p class="muted small"><b>Instrument faults</b>: the machine is fine, but a sensor is wrong.</p>
+  <div id="demo-sensors" class="demo-faults"></div>
+  <div class="demo-row">
+    <button id="demo-clear" class="btn ghost">Clear all faults</button>
+    <button id="demo-pause" class="btn ghost">Pause</button>
+    <label class="small">Clock <select id="demo-speed" class="select sm">
+      <option value="0" selected>Real time</option><option value="4">Fast-forward ×75</option>
+      <option value="2">Fast-forward ×150</option><option value="0.5">Fast-forward ×600</option></select></label>
+  </div>
+</div>
+
+<div id="modal" class="modal hidden"><div class="modal-card" id="modal-card"></div></div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

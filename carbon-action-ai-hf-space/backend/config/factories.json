@@ -1,0 +1,113 @@
+{
+  "_note": "Demo configuration. Emission factors and thresholds are illustrative placeholders, not official or site-approved values.",
+  "factories": [
+    {
+      "id": "surat-01",
+      "name": "Factory A",
+      "location": "Surat, Gujarat",
+      "industry": "Textile dyeing & printing",
+      "grid_factor_kg_per_kwh": 0.71,
+      "daily_cap_t_co2": 24.8,
+      "fuel_price": {
+        "coal_inr_per_kg": 9.5,
+        "gas_inr_per_nm3": 48.0,
+        "power_inr_per_kwh": 8.0
+      },
+      "machines": [
+        {
+          "id": "BLR-01",
+          "type": "boiler",
+          "name": "Coal-fired Steam Boiler",
+          "fuel": "coal",
+          "cv_mj_per_unit": 21.0,
+          "carbon_pct": 58.0,
+          "fuel_unit": "kg",
+          "rated_steam_kg_h": 4000,
+          "base_efficiency": 0.76,
+          "o2_optimal_pct": 6.0,
+          "exhaust_base_c": 190,
+          "co2_threshold_kg_h": 1000
+        },
+        {
+          "id": "STN-01",
+          "type": "stenter",
+          "name": "Stenter Frame (gas-fired)",
+          "fuel": "natural_gas",
+          "cv_mj_per_unit": 35.8,
+          "co2_kg_per_unit": 2.0,
+          "fuel_unit": "Nm3",
+          "width_m": 1.8,
+          "nominal_speed_m_min": 40,
+          "burner_efficiency": 0.82,
+          "co2_threshold_kg_h": 176
+        }
+      ],
+      "rolling_30d_cap_t_co2": 680
+    },
+    {
+      "id": "ahmd-02",
+      "name": "Factory B",
+      "location": "Ahmedabad, Gujarat",
+      "industry": "Textile dyeing & printing",
+      "grid_factor_kg_per_kwh": 0.71,
+      "daily_cap_t_co2": 12.8,
+      "fuel_price": {
+        "coal_inr_per_kg": 9.5,
+        "gas_inr_per_nm3": 48.0,
+        "power_inr_per_kwh": 8.0
+      },
+      "machines": [
+        {
+          "id": "BLR-01",
+          "type": "boiler",
+          "name": "Natural-gas Steam Boiler",
+          "fuel": "natural_gas",
+          "cv_mj_per_unit": 35.8,
+          "co2_kg_per_unit": 2.0,
+          "fuel_unit": "Nm3",
+          "rated_steam_kg_h": 3500,
+          "base_efficiency": 0.84,
+          "o2_optimal_pct": 3.5,
+          "exhaust_base_c": 170,
+          "co2_threshold_kg_h": 440
+        },
+        {
+          "id": "STN-01",
+          "type": "stenter",
+          "name": "Stenter Frame (gas-fired)",
+          "fuel": "natural_gas",
+          "cv_mj_per_unit": 35.8,
+          "co2_kg_per_unit": 2.0,
+          "fuel_unit": "Nm3",
+          "width_m": 1.6,
+          "nominal_speed_m_min": 35,
+          "burner_efficiency": 0.83,
+          "co2_threshold_kg_h": 150
+        }
+      ],
+      "rolling_30d_cap_t_co2": 346
+    }
+  ],
+  "users": [
+    {
+      "username": "manager",
+      "name": "Plant Manager",
+      "factories": [
+        "surat-01",
+        "ahmd-02"
+      ],
+      "password_hash": "scrypt$sNaOrTiWNYk1c+lyRZ4JJw==$XDJKjhoCCWL8bPCQN2K7WnoegRYfIoOGmPamGd3/RqA=",
+      "role": "admin"
+    },
+    {
+      "username": "surat",
+      "name": "Surat Energy Lead",
+      "factories": [
+        "surat-01"
+      ],
+      "password_hash": "scrypt$5uG/E3rZBR9mrRfN80H4ag==$6k3zmaFgnGh7Cc8AJ9Zz6GzuA74WpSUow6khujLSr0A=",
+      "role": "operator"
+    }
+  ],
+  "_users_note": "Passwords are stored as salted scrypt hashes. Create one with: python -m app.auth \"password\". Roles: admin (all actions + demo controls), operator (approve/reject actions), viewer (read only)."
+}
